@@ -81,6 +81,8 @@ function genererFilms(indice, nb) {
   }
 }
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
   genererFilms(0, 3);
 });
