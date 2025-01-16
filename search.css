@@ -1,0 +1,30 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    z-index: 1000;
+  }
+  .navigation {
+    margin: 10px;
+    font-size: 23px;
+    color: rgba(255, 255, 255, 0.817);
+    text-decoration: none;
+    margin-right: 50px;
+  }
+
+  .nav img {
+    height: 40px;
+    margin-right: 20px;
+    margin-top: 4px;
+  }
+
+  *{
+    background-color: black;
+  }
