@@ -25,6 +25,39 @@
     margin-top: 4px;
   }
 
+  #search {
+    width: 300px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: white; 
+    border: 1px solid #555; 
+    border-radius: 25px; 
+    outline: none; 
+    transition: all 0.3s ease; 
+    
+}
+
+#search::placeholder {
+    color: #aaa; 
+}
+
+#search:focus {
+    border-color: #ff9800; 
+    box-shadow: 0 0 8px #ff9800; 
+    background-color: #444; 
+}
+
   *{
     background-color: black;
-  }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+.section {
+    margin-top: 100px; /* Espacement en dessous du nav */
+    display: flex;
+    justify-content: center; /* Centre horizontalement l'input */
+}
