@@ -16,52 +16,56 @@
           <a href="search.html" class="navigation" id="decouvrir">Rechercher</a>
         </nav>
       </header>
+      <div class="video-container">
+        <video autoplay muted loop>
+          <source src="vid/BandeAnnonce.mp4" type="video/mp4" />
+          Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+        <div class="gradient"></div>
+      </div>
+      <section class="FilmAffiche">
+        <p class="titleaffiche">Le film <span id="affiche">à l'affiche</span></p>
+        <div class="Wicked">
+          <div>
+            <p class="titleWicked">Wicked</p>
+            <div class="star-display">★★★★★</div>
+            <p id="descWicked">
+              "Elphaba, une jeune femme incomprise à cause de sa peau verte, et
+              Glinda,<br />
+              une fille populaire, deviennent amies à l'université de Shiz, au
+              pays d'Oz.<br />
+              Après une rencontre avec le Merveilleux Magicien d'Oz, leur amitié
+              atteint<br />
+              un point critique..." Lire la suite
+            </p>
+            <hr />
+            <p id="Director">De : Jon M. Chu</p>
+            <p id="Actor">Avec : Cynthia Erivo, Ariana Grande, Jeff Goldblum</p>
+            <button class="buttonWicked">En savoir plus</button>
+          </div>
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BOWMwYjYzYmMtMWQ2Ni00NWUwLTg2MzAtYzkzMDBiZDIwOTMwXkEyXkFqcGc@._V1_SX300.jpg"
+            alt="Wicked"
+            class="afficheWicked"
+          />
+        </div>
+      </section>
+      <div class="#tousLesFilms">
+        <p class="titleaffiche">
+          La sélection <span id="affiche">du moment</span>
+        </p>
+        <div id="movieContainer">
+        </div>
+        <div class="tendance">
+          <div id="buttonContainer">
+            <button class="button" id="button1">Voir plus de films</button>
+          </div>
+        </div>
+      </div>
     </main>
-    <div class="video-container">
-      <video autoplay muted loop>
-        <source src="vid/BandeAnnonce.mp4" type="video/mp4" />
-        Votre navigateur ne supporte pas la lecture de vidéos.
-      </video>
-      <div class="gradient"></div>
-    </div>
-    <section class="FilmAffiche">
-      <p class="titleaffiche">Le film <span id="affiche">à l'affiche</span></p>
-      <div class="Wicked">
-        <div>
-          <p class="titleWicked">Wicked</p>
-          <div class="star-display">★★★★★</div>
-          <p id="descWicked">
-            "Elphaba, une jeune femme incomprise à cause de sa peau verte, et
-            Glinda,<br />
-            une fille populaire, deviennent amies à l'université de Shiz, au
-            pays d'Oz.<br />
-            Après une rencontre avec le Merveilleux Magicien d'Oz, leur amitié
-            atteint<br />
-            un point critique..." Lire la suite
-          </p>
-          <hr />
-          <p id="Director">De : Jon M. Chu</p>
-          <p id="Actor">Avec : Cynthia Erivo, Ariana Grande, Jeff Goldblum</p>
-          <button class="buttonWicked">En savoir plus</button>
-        </div>
-        <img
-          src="https://m.media-amazon.com/images/M/MV5BOWMwYjYzYmMtMWQ2Ni00NWUwLTg2MzAtYzkzMDBiZDIwOTMwXkEyXkFqcGc@._V1_SX300.jpg"
-          alt="Wicked"
-          class="afficheWicked"
-        />
-      </div>
-    </section>
-    <section class="section">
-      <p class="titleaffiche">
-        La sélection <span id="affiche">du moment</span>
-      </p>
-      <div id="movieContainer"></div>
-      <div class="tendance">
-        <div id="buttonContainer">
-          <button class="button" id="button1">Voir plus de films</button>
-        </div>
-      </div>
-    </section>
+    <footer>
+      <p>© 2024 CinéAstro.com</p>
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>
