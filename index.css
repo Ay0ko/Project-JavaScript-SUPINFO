@@ -53,12 +53,26 @@ body {
   height: 100%; 
 }
 
+#movieContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10%;
+  padding: 20px;
+}
+
+.afficheChargee {
+  width: 100%;
+  border-radius: 8px;
+  border: 2.5px solid black;
+}
+
 .button {
   background-color: #00254d;
   color: white;
   font-family: Arial, sans-serif;
   font-weight: bold;
   border: none;
+  margin-top: 10%;
   border-radius: 25px;
   padding: 10px 20px;
   text-align: center;
@@ -172,6 +186,24 @@ body {
   margin-top: 20px;
   margin-bottom: 0px;
   margin-left: 12%
+}
+
+.buttonWicked{
+  font-size: 18px;
+  background-color: #00254d;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 35px;
 }
 
 .star-display {

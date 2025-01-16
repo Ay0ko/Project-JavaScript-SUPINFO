@@ -64,7 +64,6 @@ function genererFilms(indice) {
   }
   currentIndex += filmToShow;
   if (currentIndex >= filmTrend.length) {
-    bouton.disabled = true;
-    bouton.innerText = "Tous les films tendances ont été affichés";
+    bouton.remove();
   }
 }
