@@ -60,9 +60,7 @@ let currentIndex = 2;
 bouton.addEventListener("click", () => {
   genererFilms(currentIndex, 9);
   const division = document.getElementById("buttonContainer");
-  const bouton = document.getElementById("button1");
   division.remove();
-  button1.remove();
 });
 
 function genererFilms(indice, nb) {
