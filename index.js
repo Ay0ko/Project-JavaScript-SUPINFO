@@ -43,3 +43,28 @@ const filmImdb = [ "tt6791350",
                    "tt30057084",
                    "tt26743414"
                  ];
+
+const bouton = document.getElementById('button1');
+let currentIndex = 0;
+bouton.addEventListener('click', () => {
+  genererFilms(currentIndex);
+});
+
+function genererFilms(indice) {
+  const filmContainer = document.getElementById('movieContainer');
+  const filmToShow = 3;
+  for (let i = indice; i < indice + filmToShow && i < filmTrend.length; i++) {
+    const affiche = document.createElement('img');
+    affiche.src = afficheTrend[i];
+    affiche.alt = `Chargement de l'affiche du film : '${filmTrend[i]}'`;
+    affiche.className = "afficheChargee";
+    affiche.loading = "lazy";
+    affiche.id = filmImdb[i];
+    filmContainer.appendChild(affiche);
+  }
+  currentIndex += filmToShow;
+  if (currentIndex >= filmTrend.length) {
+    bouton.disabled = true;
+    bouton.innerText = "Tous les films tendances ont été affichés";
+  }
+}
