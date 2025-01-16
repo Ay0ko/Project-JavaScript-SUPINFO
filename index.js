@@ -11,7 +11,10 @@ nav.forEach((link) => {
 });
 
 
-const filmTrend = [ "Guardians of the Galaxy Vol. 3",
+const filmTrend = [ "The Count of Monte-Cristo",
+                    "Despicable Me 4",
+                    "Inside Out 2",
+                    "Guardians of the Galaxy Vol. 3",
                     "Mufasa: The Lion King",
                     "Un ours dans le Jura",
                     "Beating Hearts",
@@ -22,7 +25,10 @@ const filmTrend = [ "Guardians of the Galaxy Vol. 3",
                     "Monsieur Aznavour"
                   ];
 
-const afficheTrend = [ "https://m.media-amazon.com/images/M/MV5BOTJhOTMxMmItZmE0Ny00MDc3LWEzOGEtOGFkMzY4MWYyZDQ0XkEyXkFqcGc@._V1_SX300.jpg",
+const afficheTrend = [ "https://m.media-amazon.com/images/M/MV5BMTY4NTA3ZDYtMWVkYy00MGNkLTlmYzUtODQ5YjZlZTA3YjA5XkEyXkFqcGc@._V1_SX300.jpg",
+                       "https://m.media-amazon.com/images/M/MV5BNzY0ZTlhYzgtOTgzZC00ZTg2LTk4NTEtZDllM2E2NGE5Njg2XkEyXkFqcGc@._V1_SX300.jpg",
+                       "https://m.media-amazon.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_SX300.jpg",
+                       "https://m.media-amazon.com/images/M/MV5BOTJhOTMxMmItZmE0Ny00MDc3LWEzOGEtOGFkMzY4MWYyZDQ0XkEyXkFqcGc@._V1_SX300.jpg",
                        "https://m.media-amazon.com/images/M/MV5BYjBkOWUwODYtYWI3YS00N2I0LWEyYTktOTJjM2YzOTc3ZDNlXkEyXkFqcGc@._V1_SX300.jpg",
                        "https://m.media-amazon.com/images/M/MV5BYmE1Y2E0NDMtMDI5MS00ZjY5LWE4YmEtMTA1YzY0NTY0ZjZiXkEyXkFqcGc@._V1_SX300.jpg",
                        "https://m.media-amazon.com/images/M/MV5BNjY0NGU4NDMtYWI2ZS00NDE2LWE5MzUtM2UyODUyNmFmN2ZhXkEyXkFqcGc@._V1_SX300.jpg",
@@ -33,7 +39,10 @@ const afficheTrend = [ "https://m.media-amazon.com/images/M/MV5BOTJhOTMxMmItZmE0
                        "https://m.media-amazon.com/images/M/MV5BZmRlYjBiMjAtZWVkYy00ZDk4LTk5YWUtNDhlNDA3MzM0Y2M5XkEyXkFqcGc@._V1_SX300.jpg",
                      ]; 
 
-const filmImdb = [ "tt6791350",
+const filmImdb = [ "tt26446278",
+                   "tt7510222",
+                   "tt22022452",
+                   "tt6791350",
                    "tt13186482",
                    "tt33984333",
                    "tt27490099",
@@ -64,6 +73,11 @@ function genererFilms(indice) {
   }
   currentIndex += filmToShow;
   if (currentIndex >= filmTrend.length) {
+    const bouton = document.getElementById('button1');
     bouton.remove();
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  genererFilms(currentIndex);
+});
