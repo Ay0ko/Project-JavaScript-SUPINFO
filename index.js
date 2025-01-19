@@ -72,6 +72,14 @@ function genererFilms(indice, nb) {
     affiche.className = "afficheChargee";
     affiche.loading = "lazy";
     affiche.id = filmImdb[i];
+    affiche.addEventListener("click", () => {
+      const params = new URLSearchParams({
+        title: filmTrend[i],
+        image: afficheTrend[i],
+        imdb: filmImdb[i],
+      });
+      window.location.href = `movie.html?${params.toString()}`;
+    });
     filmContainer.appendChild(affiche);
     setTimeout(() => {
       affiche.classList.add("visible");
@@ -84,3 +92,4 @@ function genererFilms(indice, nb) {
 document.addEventListener("DOMContentLoaded", () => {
   genererFilms(0, 3);
 });
+
