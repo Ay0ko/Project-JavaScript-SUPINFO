@@ -55,7 +55,15 @@ const filmImdb = [
   "tt26743414",
 ];
 
+const buttonWicked = document.querySelector(".buttonWicked");
+buttonWicked.addEventListener("click", () => {
+  window.location.href = "movie.html?title=Wicked";
+});
 
+const lireLaSuite = document.querySelector("#descWicked");
+lireLaSuite.addEventListener("click", () => {
+  window.location.href = "movie.html?title=Wicked";
+});
 
 function genererFilms(indice, nb) {
   const filmContainer = document.getElementById("movieContainer");
