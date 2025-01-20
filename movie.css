@@ -1,34 +1,110 @@
 .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    z-index: 1000;
-  }
-  .navigation {
-    margin: 10px;
-    font-size: 23px;
-    color: rgba(255, 255, 255, 0.817);
-    text-decoration: none;
-    margin-right: 50px;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  z-index: 1000;
+}
 
-  .nav img {
-    height: 40px;
-    margin-right: 20px;
-    margin-top: 4px;
-  }
+.navigation {
+  margin: 10px;
+  font-size: 23px;
+  color: rgba(255, 255, 255, 0.817);
+  text-decoration: none;
+  margin-right: 50px;
+}
 
-  *{
-    background-color: black;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  
+.nav img {
+  height: 40px;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+
+* {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.film {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.poster {
+  max-width: 300px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.titre {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.infos {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  margin-bottom: 20px; 
+}
+
+
+.infos span {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  margin-right: 20px; 
+}
+
+.résumé {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  word-wrap: break-word;
+  word-break: break-word; 
+  max-width: 600px; 
+}
+
+.infos, .résumé {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+
+.infos, .résumé {
+  padding: 10px; 
+  margin: 10px 0; 
+}
+
+@media (max-width: 768px) {
+  .infos {
+    flex-direction: column; 
+  }
 }

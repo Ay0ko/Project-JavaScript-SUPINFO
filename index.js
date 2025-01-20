@@ -1,5 +1,5 @@
+// Sélection des éléments de navigation pour appliquer un effet hover
 const nav = document.querySelectorAll(".nav .navigation");
-
 nav.forEach((link) => {
   link.addEventListener("mouseover", () => {
     link.style.textDecoration = "underline";
@@ -10,6 +10,7 @@ nav.forEach((link) => {
   });
 });
 
+// Données des films
 const filmTrend = [
   "The Count of Monte-Cristo",
   "Despicable Me 4",
@@ -55,32 +56,28 @@ const filmImdb = [
   "tt26743414",
 ];
 
-const buttonWicked = document.querySelector(".buttonWicked");
-buttonWicked.addEventListener("click", () => {
-  window.location.href = "movie.html?title=Wicked";
-});
-
-const lireLaSuite = document.querySelector("#descWicked");
-lireLaSuite.addEventListener("click", () => {
-  window.location.href = "movie.html?title=Wicked";
-});
-
+// Générer les affiches de films
 function genererFilms(indice, nb) {
   const filmContainer = document.getElementById("movieContainer");
+
   for (let i = indice; i < indice + nb && i < filmTrend.length; i++) {
     const affiche = document.createElement("img");
     affiche.src = afficheTrend[i];
-    affiche.alt = `Chargement de l'affiche du film : '${filmTrend[i]}'`;
+    affiche.alt = `Affiche du film : '${filmTrend[i]}'`;
     affiche.className = "afficheChargee";
     affiche.loading = "lazy";
     affiche.id = filmImdb[i];
+
+
     affiche.addEventListener("click", () => {
-      const params = new URLSearchParams({
+      const filmData = {
         title: filmTrend[i],
         image: afficheTrend[i],
         imdb: filmImdb[i],
-      });
-      window.location.href = `movie.html?${params.toString()}`;
+      };
+
+      localStorage.setItem("selectedFilm", JSON.stringify(filmData));
+      window.location.href = "movie.html";
     });
     filmContainer.appendChild(affiche);
     setTimeout(() => {
@@ -89,16 +86,17 @@ function genererFilms(indice, nb) {
   }
 }
 
-
-const bouton = document.getElementById("button1");
-let currentIndex = 2;
-bouton.addEventListener("click", () => {
-  genererFilms(currentIndex, 9);
-  document.querySelector(".tendance").classList.add("loaded");
-  const division = document.getElementById("buttonContainer");
-  division.remove();
-});
 document.addEventListener("DOMContentLoaded", () => {
   genererFilms(0, 3);
 });
 
+const bouton = document.getElementById("button1");
+let currentIndex = 3;
+
+bouton.addEventListener("click", () => {
+  genererFilms(currentIndex, 9);
+  document.querySelector(".tendance").classList.add("loaded");
+
+  const buttonContainer = document.getElementById("buttonContainer");
+  buttonContainer.remove();
+});
