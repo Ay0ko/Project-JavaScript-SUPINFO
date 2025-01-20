@@ -55,13 +55,7 @@ const filmImdb = [
   "tt26743414",
 ];
 
-const bouton = document.getElementById("button1");
-let currentIndex = 2;
-bouton.addEventListener("click", () => {
-  genererFilms(currentIndex, 9);
-  const division = document.getElementById("buttonContainer");
-  division.remove();
-});
+
 
 function genererFilms(indice, nb) {
   const filmContainer = document.getElementById("movieContainer");
@@ -88,7 +82,14 @@ function genererFilms(indice, nb) {
 }
 
 
-
+const bouton = document.getElementById("button1");
+let currentIndex = 2;
+bouton.addEventListener("click", () => {
+  genererFilms(currentIndex, 9);
+  document.querySelector(".tendance").classList.add("loaded");
+  const division = document.getElementById("buttonContainer");
+  division.remove();
+});
 document.addEventListener("DOMContentLoaded", () => {
   genererFilms(0, 3);
 });

@@ -244,6 +244,13 @@ main {
   align-items: center;
   width: 100%;
   height: auto;
+  padding-bottom: 50px; 
+  transition: padding-bottom 0.3s ease-in-out;
+}
+
+
+.tendance.loaded {
+  padding-bottom: 400px; 
 }
 
 #movieContainer {
