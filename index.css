@@ -299,12 +299,3 @@ main {
   background-color: white;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  background-color: #222;
-  color: #fff;
-  padding: 10px 0;
-}
