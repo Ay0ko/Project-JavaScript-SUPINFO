@@ -61,3 +61,14 @@
     display: flex;
     justify-content: center; /* Centre horizontalement l'input */
 }
+
+.pied {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 100px;
+  width: 100%;
+  margin-top: 0px;
+}
