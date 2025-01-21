@@ -1,3 +1,48 @@
+// clé : 1d817c6c
+// titre : https://www.omdbapi.com/?s=thr&page=1&apikey=1d817c6c
+// details : https://www.omdbapi.com/?i=tt3896198&apikey=1d817c6c
+
+// const inputRecherche = document.getElementById('search');
+// const retourRecherche = document.getElementById('ResultatRecherche');
+
+
+// async function chargerFilms(elementEntre) {
+//   const URL = `https://www.omdbapi.com/?s=${elementEntre}&page=1&apikey=1d817c6c`;
+//   const recherche = await fetch(`${URL}`);
+//   const donnees = await recherche.json;
+//   if (donnees == "True") chargerFilms(donnees.recherche);
+// }
+
+// function chercherFilms() {
+//   let entree = (inputRecherche.value).trrim();
+//   if (entree.length > 0) {
+//     entree = 0;
+//   }
+// }
+
+// function afficherFilms(films) {
+//   retourRecherche.innerHTML = "";
+//   for (let idx = 0; idx < films.length; idx++) {
+//     let afficheFilm = document.createElement('div');
+//     afficheFilm.dataset.id = films[idx].imdbID;
+//     afficheFilm.classList.add('listeElementsRecherche');
+//     if (films[idx].Poster != "N/A")
+//       posterFilm = films[idx].Poster;
+//     else
+//       posterFilm = "image_non_trouvee.png"
+//     afficheFilm.innerHTML = `
+//     <div class="poster">
+//       <img src="${posterFilm}" alt="Affiche du film : ${films[idx].Title}">
+//     </div>
+//       <div class="infoElementsRecherche">
+//           <h3> ${films[idx].Title} </h3>
+//           <p> ${films[idx].Released} </p>
+//       </div>
+//     </div>`;
+//     retourRecherche.appendChild(afficheFilm);
+//   }
+// }
+
 document.addEventListener("DOMContentLoaded", () => {
   const entreeRecherche = document.getElementById("search");
   const ResultatRecherche = document.getElementById("ResultatRecherche");
