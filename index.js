@@ -1,4 +1,3 @@
-// Sélection des éléments de navigation pour appliquer un effet hover
 const nav = document.querySelectorAll(".nav .navigation");
 nav.forEach((link) => {
   link.addEventListener("mouseover", () => {
@@ -10,7 +9,6 @@ nav.forEach((link) => {
   });
 });
 
-// Données des films
 const filmTrend = [
   "The Count of Monte-Cristo",
   "Despicable Me 4",
@@ -56,7 +54,7 @@ const filmImdb = [
   "tt26743414",
 ];
 
-// Générer les affiches de films
+
 function genererFilms(indice, nb) {
   const filmContainer = document.getElementById("movieContainer");
 

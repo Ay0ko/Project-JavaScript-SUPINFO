@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  console.log("Données du film sélectionné:", selectedFilm); // Pour le debug
+  console.log("Données du film sélectionné:", selectedFilm); 
 
   const filmPoster = document.getElementById("filmPoster");
   filmPoster.src = selectedFilm.image;
