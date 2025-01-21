@@ -21,11 +21,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     const movieData = await response.json();
 
     if (movieData.Response === "True") {
-      const filmActors = document.getElementById("filmActors").querySelector("span");
+      const filmActors = document.getElementById("filmActors");
       filmActors.textContent = movieData.Actors || "N/A";
 
-      const filmDirector = document.getElementById("filmDirector").querySelector("span");
+      const filmDirector = document.getElementById("filmDirector");
       filmDirector.textContent = movieData.Director || "N/A";
+
+      const filmGenre = document.getElementById("filmGenre");
+      filmGenre.textContent = movieData.Genre || "N/A";
 
       const plotElement = document.createElement("p");
       plotElement.className = "movie-plot";
