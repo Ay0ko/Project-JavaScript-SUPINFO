@@ -9,6 +9,24 @@ nav.forEach((link) => {
   });
 });
 
+const wickedButton = document.querySelector(".buttonWicked");
+const wickedDesc = document.querySelector("#descWicked");
+
+const wickedData = {
+  title: "Wicked",
+  image: "https://m.media-amazon.com/images/M/MV5BOWMwYjYzYmMtMWQ2Ni00NWUwLTg2MzAtYzkzMDBiZDIwOTMwXkEyXkFqcGc@._V1_SX300.jpg",
+  imdb: "tt1262426", 
+};
+
+const redirectToWicked = () => {
+  localStorage.setItem("selectedFilm", JSON.stringify(wickedData));
+  window.location.href = "movie.html";
+};
+
+wickedButton.addEventListener("click", redirectToWicked);
+wickedDesc.addEventListener("click", redirectToWicked);
+
+
 const filmTrend = [
   "The Count of Monte-Cristo",
   "Despicable Me 4",
