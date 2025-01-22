@@ -7,16 +7,19 @@ const retourRecherche = document.getElementById('ResultatRecherche');
 
 
 async function chargerFilms(elementEntre) {
-  const URL = `${"https://www.omdbapi.com/"}?apikey=${"190fc5fe"}&s=${movieTitle}`;
-  const recherche = await fetch(`${URL}`);
+  const URL = `${"https://www.omdbapi.com/"}?apikey=${"190fc5fe"}&s=${elementEntre}`;
+  const recherche = await fetch(URL);
   const donnees = await recherche.json();
-  if (donnees == "True") chargerFilms(donnees.recherche);
+  if (donnees.Response == "True") chargerFilms(donnees.Search);
+  else retourRecherche.innerHTML = "";
 }
 
 function chercherFilms() {
   let entree = (inputRecherche.value).trim();
   if (entree.length > 0) {
-    entree = 0;
+    chargerFilms(entree);
+  } else {
+    retourRecherche.innerHTML ="";
   }
 }
 
@@ -26,10 +29,7 @@ function afficherFilms(films) {
     let afficheFilm = document.createElement('div');
     afficheFilm.dataset.id = films[idx].imdbID;
     afficheFilm.classList.add('listeElementsRecherche');
-    if (films[idx].Poster != "N/A")
-      posterFilm = films[idx].Poster;
-    else
-      posterFilm = "img/image_non_trouvee.png"
+    let posterFilm = films[idx].Poster !== "N/A" ? films[idx].Poster : "img/image_non_trouvee.png";
     afficheFilm.innerHTML = `
     <div class="poster">
       <img src="${posterFilm}" alt="Affiche du film : ${films[idx].Title}">
@@ -42,6 +42,8 @@ function afficherFilms(films) {
     retourRecherche.appendChild(afficheFilm);
   }
 }
+
+inputRecherche.addEventListener('keyup', chercherFilms());
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   const entreeRecherche = document.getElementById("search");
