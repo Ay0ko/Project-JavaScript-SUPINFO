@@ -50,12 +50,14 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  flex-wrap: wrap;
   margin-top: 10%;
 }
 
 .poster {
   width: 300px;
   border-radius: 10px;
+  max-width: 300px; 
 }
 
 .film-info {
@@ -93,7 +95,77 @@ h1, strong {
 
 
 @media (max-width: 768px) {
-  .infos {
-    flex-direction: column; 
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;  
+  }
+
+  .navigation {
+    font-size: 18px;
+    margin-right: 0;
+  }
+
+  .film {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+  }
+
+  .poster {
+    max-width: 200px;   
+  }
+
+  .film-info {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .Title {
+    font-size: 28px;
+  }
+
+  .info-line {
+    font-size: 20px;
+  }
+
+  .movie-details {
+    font-size: 18px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    padding: 10px 5px;
+  }
+
+  .navigation {
+    font-size: 16px;
+    margin-right: 0;
+  }
+
+  .film {
+    margin-top: 150px;
+  }
+
+  .poster {
+    max-width: 150px;
+  }
+
+  .film-info {
+    text-align: center;
+  }
+
+  .Title {
+    font-size: 24px;
+  }
+
+  .info-line {
+    font-size: 18px;
+  }
+
+  .movie-details {
+    font-size: 16px;
   }
 }
