@@ -90,6 +90,17 @@ h1, strong {
   color: white;
 }
 
+.pied {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 100px;
+  width: 100%;
+  padding-top: 10px;
+}
+
 @media (max-width: 768px) {
   .infos {
     flex-direction: column; 
