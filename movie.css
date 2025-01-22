@@ -42,14 +42,15 @@ body {
 }
 
 main {
-  padding: 100px;
+  padding-top: 3%;
+  margin: 0px;
 }
 
 .film {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  margin: 40px 12%;
+  margin-top: 10%;
 }
 
 .poster {
