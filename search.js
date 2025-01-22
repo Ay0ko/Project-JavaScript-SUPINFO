@@ -2,48 +2,63 @@
 // titre : https://www.omdbapi.com/?s=thr&page=1&apikey=1d817c6c
 // details : https://www.omdbapi.com/?i=tt3896198&apikey=1d817c6c
 
-const inputRecherche = document.getElementById('search');
-const retourRecherche = document.getElementById('ResultatRecherche');
+const inputRecherche = document.getElementById("search");
+const retourRecherche = document.getElementById("ResultatRecherche");
 
 
-async function chargerFilms(elementEntre) {
-  const URL = `${"https://www.omdbapi.com/"}?apikey=${"190fc5fe"}&s=${elementEntre}`;
-  const recherche = await fetch(URL);
-  const donnees = await recherche.json();
-  if (donnees.Response == "True") chargerFilms(donnees.Search);
-  else retourRecherche.innerHTML = "";
-}
+async function chargerFilms(titreRecherche) {
+  const URL = `https://www.omdbapi.com/?apikey=190fc5fe&s=${titreRecherche}`;
+  
+  try {
+    const reponse = await fetch(URL);
+    const donnees = await reponse.json();
 
-function chercherFilms() {
-  let entree = (inputRecherche.value).trim();
-  if (entree.length > 0) {
-    chargerFilms(entree);
-  } else {
-    retourRecherche.innerHTML ="";
+    if (donnees.Response === "True") {
+      afficherFilms(donnees.Search);
+    } else {
+      retourRecherche.innerHTML = `<p>Aucun film trouvé pour "${titreRecherche}".</p>`;
+    }
+  } catch (erreur) {
+    console.error("Erreur lors de la récupération des films :", erreur);
+    retourRecherche.innerHTML = `<p>Une erreur est survenue. Veuillez réessayer plus tard.</p>`;
   }
 }
 
 function afficherFilms(films) {
   retourRecherche.innerHTML = "";
-  for (let idx = 0; idx < films.length; idx++) {
-    let afficheFilm = document.createElement('div');
-    afficheFilm.dataset.id = films[idx].imdbID;
-    afficheFilm.classList.add('listeElementsRecherche');
-    let posterFilm = films[idx].Poster !== "N/A" ? films[idx].Poster : "img/image_non_trouvee.png";
+
+  films.forEach((film) => {
+    const afficheFilm = document.createElement("div");
+    afficheFilm.classList.add("listeElementsRecherche");
+    afficheFilm.dataset.id = film.imdbID;
+
+    const posterFilm = film.Poster !== "N/A" ? film.Poster : "img/image_non_trouvee.png";
+
     afficheFilm.innerHTML = `
-    <div class="poster">
-      <img src="${posterFilm}" alt="Affiche du film : ${films[idx].Title}">
-    </div>
-      <div class="infoElementsRecherche">
-          <h3> ${films[idx].Title} </h3>
-          <p> ${films[idx].Released} </p>
+      <div class="poster">
+        <img src="${posterFilm}" alt="Affiche du film : ${film.Title}">
       </div>
-    </div>`;
+      <div class="infoElementsRecherche">
+          <h3>${film.Title}</h3>
+          <p>Année : ${film.Year}</p>
+      </div>
+    `;
+
     retourRecherche.appendChild(afficheFilm);
+  });
+}
+
+function chercherFilms() {
+  const titreRecherche = inputRecherche.value.trim();
+
+  if (titreRecherche.length > 0) {
+    chargerFilms(titreRecherche);
+  } else {
+    retourRecherche.innerHTML = "<p>Veuillez saisir un titre pour rechercher.</p>";
   }
 }
 
-inputRecherche.addEventListener('keyup', chercherFilms());
+inputRecherche.addEventListener("input", chercherFilms);
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   const entreeRecherche = document.getElementById("search");
