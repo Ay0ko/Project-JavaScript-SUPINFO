@@ -57,7 +57,7 @@ main {
 .poster {
   width: 300px;
   border-radius: 10px;
-  max-width: 300px; 
+  max-width: 300px;
 }
 
 .film-info {
@@ -89,15 +89,15 @@ main {
   margin-bottom: 30px;
 }
 
-h1, strong {
+h1,
+strong {
   color: white;
 }
-
 
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
-    align-items: flex-start;  
+    align-items: flex-start;
   }
 
   .navigation {
@@ -112,7 +112,7 @@ h1, strong {
   }
 
   .poster {
-    max-width: 200px;   
+    max-width: 200px;
   }
 
   .film-info {
@@ -132,7 +132,6 @@ h1, strong {
     font-size: 18px;
   }
 }
-
 
 @media (max-width: 480px) {
   .nav {
