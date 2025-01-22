@@ -19,17 +19,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     const apiKey = "190fc5fe"; 
     const response = await fetch(`https://www.omdbapi.com/?i=${selectedFilm.imdb}&plot=full&apikey=${apiKey}`);
     const movieData = await response.json();
-
+  
     if (movieData.Response === "True") {
-      const filmActors = document.getElementById("filmActors");
-      filmActors.textContent = movieData.Actors || "N/A";
+      const actorNames = document.getElementById("actorNames");
+      actorNames.textContent = movieData.Actors || "N/A";
+  
+      const directorName = document.getElementById("directorName");
+      directorName.textContent = movieData.Director || "N/A";
 
-      const filmDirector = document.getElementById("filmDirector");
-      filmDirector.textContent = movieData.Director || "N/A";
-
-      const filmGenre = document.getElementById("filmGenre");
-      filmGenre.textContent = movieData.Genre || "N/A";
-
+      const genreName = document.getElementById("genreName");
+      genreName.textContent = movieData.Genre || "N/A";
+  
       const plotElement = document.createElement("p");
       plotElement.className = "movie-plot";
       plotElement.innerHTML = `<strong>Résumé :</strong> ${movieData.Plot || "Résumé non disponible."}`;
@@ -42,4 +42,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Erreur de requête API :", error);
     alert("Une erreur est survenue lors de la récupération des détails du film.");
   }
-});
+});  

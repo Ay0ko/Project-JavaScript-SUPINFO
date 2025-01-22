@@ -17,25 +17,23 @@
         </nav>
       </header>
       <div class="film">
-        <img id="filmPoster" class="poster" src="" alt="Affiche du film">
-        <h1 id="filmTitle" class="Title">Titre du film</h1>
-        <div id="infos" class="infos">
-          <h1 id="filmTitle"></h1>
-          
-          <div id="filmActors">
-            <strong>Acteurs:</strong>
+        <img id="filmPoster" class="poster" src="https://via.placeholder.com/300x450" alt="Affiche du film">
+        <div class="film-info">
+          <h1 id="filmTitle" class="Title">Titre du film</h1>
+          <div class="star-display">★★★★★</div>
+          <div id="filmActors" class="info-line">
+            <strong>Acteurs:</strong> <span id="actorNames">Inconnu</span>
           </div>
-          <div id="filmDirector">
-            <strong>Réalisateur:</strong> 
+          <div id="filmDirector" class="info-line">
+            <strong>Réalisateur:</strong> <span id="directorName">Inconnu</span>
           </div>
-          <div id="filmGenre">
-            <strong>Genre:</strong>
+          <div id="filmGenre" class="info-line">
+            <strong>Genre:</strong> <span id="genreName">Inconnu</span>
           </div>
-        
-          <div class="movie-details">
-          </div>
+          <hr/>
+        <div>
+          <p id="filmDescription" class="movie-details"></p>
         </div>
-        
       </div>
     </main>
     <script type="module" src="movie.js"></script>
