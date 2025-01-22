@@ -14,8 +14,9 @@ const wickedDesc = document.querySelector("#descWicked");
 
 const wickedData = {
   title: "Wicked",
-  image: "https://m.media-amazon.com/images/M/MV5BOWMwYjYzYmMtMWQ2Ni00NWUwLTg2MzAtYzkzMDBiZDIwOTMwXkEyXkFqcGc@._V1_SX300.jpg",
-  imdb: "tt1262426", 
+  image:
+    "https://m.media-amazon.com/images/M/MV5BOWMwYjYzYmMtMWQ2Ni00NWUwLTg2MzAtYzkzMDBiZDIwOTMwXkEyXkFqcGc@._V1_SX300.jpg",
+  imdb: "tt1262426",
 };
 
 const redirectToWicked = () => {
@@ -25,7 +26,6 @@ const redirectToWicked = () => {
 
 wickedButton.addEventListener("click", redirectToWicked);
 wickedDesc.addEventListener("click", redirectToWicked);
-
 
 const filmTrend = [
   "The Count of Monte-Cristo",
@@ -72,18 +72,22 @@ const filmImdb = [
   "tt26743414",
 ];
 
-
 function genererFilms(indice, nb) {
   const filmContainer = document.getElementById("movieContainer");
 
   for (let i = indice; i < indice + nb && i < filmTrend.length; i++) {
-    const affiche = document.createElement("img");
-    affiche.src = afficheTrend[i];
-    affiche.alt = `Affiche du film : '${filmTrend[i]}'`;
-    affiche.className = "afficheChargee";
+    const affiche = document.createElement("div");
+    affiche.classList.add("affichesTrend");
+    affiche.innerHTML = `
+      <div class="poster">
+        <img src="${afficheTrend[i]}" alt="Affiche du film : ${filmTrend[i]}">
+      </div>
+      <div class="titre">
+        <h2> ${filmTrend[i]} </h2>
+      </div>
+    `;
     affiche.loading = "lazy";
     affiche.id = filmImdb[i];
-
 
     affiche.addEventListener("click", () => {
       const filmData = {
