@@ -44,7 +44,7 @@ function afficherFilms(films) {
 
     afficheFilm.addEventListener("click", () => {
       const filmData = {
-        title: film.Tilte,
+        title: film.Title,
         image: posterFilm,
         imdb: film.imdbID,
       };
