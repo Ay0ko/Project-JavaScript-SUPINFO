@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   filmTitle.textContent = selectedFilm.title;
 
   try {
-    const apiKey = "190fc5fe"; 
-    const response = await fetch(`https://www.omdbapi.com/?i=${selectedFilm.imdb}&plot=full&apikey=${apiKey}`);
+    const response = await fetch(`https://www.omdbapi.com/?i=${selectedFilm.imdb}&plot=full&apikey=${"190fc5fe"}`);
     const movieData = await response.json();
   
     if (movieData.Response === "True") {
@@ -32,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
       const plotElement = document.createElement("p");
       plotElement.className = "movie-plot";
-      plotElement.innerHTML = `<strong>Résumé :</strong> ${movieData.Plot || "Résumé non disponible."}`;
+      plotElement.innerHTML = `<strong>Resume :</strong> ${movieData.Plot || "Résumé non disponible."}`;
       document.querySelector(".movie-details").appendChild(plotElement);
     } else {
       console.error("Erreur API OMDb :", movieData.Error);
