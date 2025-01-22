@@ -101,24 +101,23 @@
   color: #aaa;
 }
 
-.pied {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+.listeElementsRecherche {
+  width: 20%;
   text-align: center;
-  padding: 10px 20px;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  /* position:relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  color: white;
-  height: 100px;
+  word-wrap:normal;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.listeElementsRecherche img {
   width: 100%;
-  margin-top: 0px; */
+  height: auto;
+}
+
+.infoElementsRecherche {
+  padding: 10px;
+  text-align: center;
+  white-space: normal;
+  color: #fff;
 }

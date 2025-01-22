@@ -43,6 +43,17 @@ function afficherFilms(films) {
           <p>Année : ${film.Year}</p>
       </div>
     `;
+    
+    afficheFilm.addEventListener("click", () => {
+      const filmData = {
+        title: filmTrend[i],
+        image: afficheTrend[i],
+        imdb: filmImdb[i],
+      };
+
+      localStorage.setItem("selectedFilm", JSON.stringify(filmData));
+      window.location.href = "movie.html";
+    });    
 
     retourRecherche.appendChild(afficheFilm);
   });
