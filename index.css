@@ -300,6 +300,7 @@ main {
   height: auto;
   padding-bottom: 50px;
   transition: padding-bottom 0.3s ease-in-out;
+  margin-bottom: 50px;
 }
 
 .tendance.loaded {
@@ -374,5 +375,5 @@ main {
   color: white;
   height: 100px;
   width: 100%;
-  margin-top: 0px;
+  margin-top: 100px;
 }
