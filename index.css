@@ -300,7 +300,7 @@ main {
   height: auto;
   padding-bottom: 50px;
   transition: padding-bottom 0.3s ease-in-out;
-  margin-bottom: 50px;
+  margin-bottom: 2.5%;
 }
 
 .tendance.loaded {
